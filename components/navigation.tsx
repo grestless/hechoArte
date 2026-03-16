@@ -40,16 +40,15 @@ export function Navigation() {
         }`}
       >
         <div className="flex items-center justify-between px-5 py-4 md:px-10 lg:px-16">
-          {/* Logo */}
-          <Link href="/" className="group flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#3355ff]">
-              <svg viewBox="0 0 24 24" className="h-4 w-4 text-white" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
+          <Link href="/" className="group flex items-center transition-opacity hover:opacity-80">
+            <div className="flex flex-col items-start leading-none">
+              <span className="font-[family-name:var(--font-inter)] text-xl font-black uppercase tracking-tighter text-[#e8eaf0] md:text-2xl">
+                Hecho
+              </span>
+              <span className="font-[family-name:var(--font-inter)] text-[10px] font-light uppercase tracking-[0.6em] text-[#3355ff] md:text-[11px]">
+                Arte
+              </span>
             </div>
-            <span className="font-[family-name:var(--font-space)] text-lg font-bold tracking-tight text-[#e8eaf0]">
-              hecho<span className="italic text-[#3355ff]">arte</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}

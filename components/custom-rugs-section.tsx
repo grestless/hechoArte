@@ -2,25 +2,24 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useScrollReveal } from "@/hooks/use-animations"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useInView } from "@/hooks/use-in-view"
 
 export function CustomRugsSection() {
   const { ref, inView } = useInView(0.05)
-  const { ref: revealRef, style: revealStyle } = useScrollReveal()
 
   return (
     <section className="relative overflow-hidden bg-[#080b1a] py-24 md:py-32">
       <div ref={ref} className="px-5 md:px-10 lg:px-16">
         <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
-          {/* Left: image with "YOUR DESIGN HERE" overlay */}
+          {/* Left: image with entrance scale + fade — GPU-friendly, no scroll listener */}
           <div
-            className={`relative mx-auto w-full max-w-md flex-shrink-0 overflow-hidden rounded-2xl md:mx-0 transition-all duration-800 ${
-              inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-            }`}
-            ref={revealRef}
-            style={revealStyle}
+            className={`relative mx-auto w-full max-w-md flex-shrink-0 overflow-hidden rounded-2xl md:mx-0`}
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? "translateX(0) scale(1)" : "translateX(-2rem) scale(0.97)",
+              transition: "opacity 0.9s cubic-bezier(0.4,0,0.2,1), transform 0.9s cubic-bezier(0.4,0,0.2,1)",
+            }}
           >
             <div className="relative aspect-[3/4]">
               <Image
@@ -46,23 +45,32 @@ export function CustomRugsSection() {
           {/* Right: text */}
           <div className="flex-1">
             <h2
-              className={`font-[family-name:var(--font-display)] text-4xl uppercase leading-[1.05] text-[#e8eaf0] md:text-6xl lg:text-7xl transition-all duration-800 delay-200 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+              className="font-[family-name:var(--font-display)] text-4xl uppercase leading-[1.05] text-[#e8eaf0] md:text-6xl lg:text-7xl"
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(2rem)",
+                transition: "opacity 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s, transform 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s",
+              }}
             >
               ALFOMBRAS <span className="italic text-[#3355ff]">A MEDIDA</span>
             </h2>
             <p
-              className={`mt-6 max-w-lg text-sm leading-relaxed text-[#7a80a0] md:text-base transition-all duration-800 delay-400 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+              className="mt-6 max-w-lg text-sm leading-relaxed text-[#7a80a0] md:text-base"
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(1.5rem)",
+                transition: "opacity 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s, transform 0.8s cubic-bezier(0.4,0,0.2,1) 0.4s",
+              }}
             >
-            ¿Tenés una idea para una pieza de arte? Hagámosla realidad. Colaboramos directamente con vos para tejer tu visión personal en cada nudo.
+              ¿Tenés una idea para una pieza de arte? Hagámosla realidad. Colaboramos directamente con vos para tejer tu visión personal en cada nudo.
             </p>
             <div
-              className={`mt-8 transition-all duration-800 delay-600 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
+              style={{
+                opacity: inView ? 1 : 0,
+                transform: inView ? "translateY(0)" : "translateY(1.5rem)",
+                transition: "opacity 0.8s cubic-bezier(0.4,0,0.2,1) 0.6s, transform 0.8s cubic-bezier(0.4,0,0.2,1) 0.6s",
+              }}
+              className="mt-8"
             >
               <MagneticButton>
                 <Link

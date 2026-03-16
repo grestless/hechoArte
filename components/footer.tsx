@@ -38,14 +38,12 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12 text-center md:text-left">
           {/* Brand */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#3355ff]">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-white" fill="none" stroke="currentColor" strokeWidth={2.5}>
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-              </div>
-              <span className="font-[family-name:var(--font-space)] text-lg font-bold tracking-tight text-[#e8eaf0]">
-                hecho<span className="italic text-[#3355ff]">arte</span>
+            <Link href="/" className="flex flex-col items-start leading-none transition-opacity hover:opacity-80">
+              <span className="font-[family-name:var(--font-inter)] text-xl font-black uppercase tracking-tighter text-[#e8eaf0]">
+                Hecho
+              </span>
+              <span className="font-[family-name:var(--font-inter)] text-[10px] font-light uppercase tracking-[0.6em] text-[#3355ff]">
+                Arte
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-xs leading-relaxed text-[#7a80a0]">

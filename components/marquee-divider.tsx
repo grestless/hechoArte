@@ -6,7 +6,6 @@ export function MarqueeDivider() {
     "UNICO",
     "EXCLUSIVO",
     "HECHO A MANO",
-    "IRREPETIBLE",
     "ARTE",
     "DISENO",
     "TEXTURA",
@@ -37,7 +36,7 @@ export function MarqueeDivider() {
           }
         }
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 18s linear infinite;
         }
       `}</style>
     </div>
