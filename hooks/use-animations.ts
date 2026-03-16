@@ -7,7 +7,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
  * @param speed - Multiplier for parallax intensity (0.1 = subtle, 0.5 = strong)
  * @param disableOnMobile - Disable on screens < 768px (default: true)
  */
-export function useParallax(speed = 0.15, disableOnMobile = true) {
+export function useParallax(speed = 0.15, disableOnMobile = false) {
   const ref = useRef<HTMLDivElement>(null)
   const [offset, setOffset] = useState(0)
 

@@ -29,12 +29,17 @@ export function NotAverageSection() {
         <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
           {/* Left: circle image */}
           <div
-            className={`relative mx-auto h-56 w-56 flex-shrink-0 overflow-hidden rounded-full md:mx-0 md:h-72 md:w-72 transition-all duration-800 ${
-              inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
-            }`}
-            ref={parallaxRef}
+            className={`relative mx-auto h-56 w-56 flex-shrink-0 overflow-hidden rounded-full md:mx-0 md:h-72 md:w-72`}
+            style={{
+              opacity: inView ? 1 : 0,
+              transform: inView ? "scale(1)" : "scale(0.9)",
+              transition: "opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1)",
+            }}
           >
-            <div style={{ transform: `translateY(${offset}px)`, position: "absolute", inset: "-10%", width: "120%", height: "120%" }}>
+            <div 
+              ref={parallaxRef}
+              style={{ transform: `translateY(${offset}px)`, position: "absolute", inset: "-10%", width: "120%", height: "120%" }}
+            >
               <Image
                 src="/images/rug-gallery-2.jpg"
                 alt="Alfombra artesanal detalle"

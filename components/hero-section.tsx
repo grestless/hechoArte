@@ -24,7 +24,10 @@ export function HeroSection() {
       <div className="absolute inset-0" ref={parallaxRef}>
         <div
           className="absolute inset-0"
-          style={{ transform: `translateY(${parallaxOffset}px) scale(1.15)` }}
+          style={{ 
+            transform: `translateY(${parallaxOffset}px) scale(1.15)`,
+            transition: "none" // Ensure no CSS transition interferes with scroll updates
+          }}
         >
           <Image
             src="/images/hero-rug.jpg"
