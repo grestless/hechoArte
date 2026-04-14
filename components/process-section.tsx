@@ -25,9 +25,9 @@ const steps = [
 ]
 
 const stats = [
-  { target: 500, suffix: "+", label: "Piezas creadas" },
-  { target: 12000, suffix: "+", label: "Horas de trabajo" },
-  { target: 180, suffix: "+", label: "Colores disponibles" },
+  { target: 50, suffix: "+", label: "Piezas creadas" },
+  { target: 1000, suffix: "+", label: "Horas de trabajo" },
+  { target: 80, suffix: "+", label: "Colores disponibles" },
   { target: 100, suffix: "%", label: "Hecho a mano" },
 ]
 
